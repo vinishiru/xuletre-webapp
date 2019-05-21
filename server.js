@@ -1,9 +1,11 @@
 var express = require('express');
+var os = require("os");
+
 var app = express();
 
 app.get('*', function (req, res) {
-
-    res.send('Xuletre WebApp 1.0');
+    var hostname = os.hostname();
+    res.send(`Xuletre WebApp 1.0 - Hostname: ${hostname}`);
 });
 
 app.listen(8080, function () {
